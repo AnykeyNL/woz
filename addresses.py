@@ -19,6 +19,7 @@ with open("parcel_{}.csv".format(municipality)) as csv_file:
         while retry:
             try:
                 response = requests.get(url=surl)
+                print (response.text)
                 docs = response.json().get("docs")
                 line = line + 1
                 for wozobject in docs:
